@@ -194,6 +194,21 @@ function hideYouTubeShortsElements() {
             console.log("Removed Shorts from sidebar");
         }
       });
+    
+
+    
+    // Hide the Shorts button in scroll container search results
+    
+    // Source - https://stackoverflow.com/a
+    // Posted by user2927940, modified by community. See post 'Timeline' for change history
+    // Retrieved 2025-11-23, License - CC BY-SA 3.0
+    var shortScrollContainer = Array.prototype.slice.call(document.querySelectorAll('ytd-search-header-renderer yt-chip-cloud-chip-renderer chip-shape button div'))
+      .filter(function (el) {
+        return el.textContent === 'Shorts'
+      })[0];
+    
+    shortScrollContainer.style.display = "none";
+    
 
   // Hide Shorts videos in the feed
   document

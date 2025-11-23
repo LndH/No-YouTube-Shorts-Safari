@@ -183,6 +183,17 @@ function hideYouTubeShortsElements() {
         }
       }
     });
+    
+    // Hide the Shorts menu in mini sidebar
+    document
+      .querySelectorAll("ytd-mini-guide-renderer:not([data-processed])")
+      .forEach((item) => {
+          const shorts = item.querySelector('a[title="Shorts"]')
+        if (shorts) {
+            shorts.style.display = "none";
+            console.log("Removed Shorts from sidebar");
+        }
+      });
 
   // Hide Shorts videos in the feed
   document
